@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="header">
+    <div class="brand-row">
+      <img class="brand-logo" src="icons/icon48.png" alt="ClearText Logo">
+      <div class="brand-copy">
+        <h2 class="title">ClearText</h2>
+        <div class="subtitle">Understand. Learn. Remember.</div>
+      </div>
+      <div class="ready-dot" title="ClearText is ready"></div>
+      <button id="settingsBtn" class="settings-btn" title="Settings">⚙️</button>
+    </div>
+  </div>
+  <select id="languageSelect" class="dropdown">
+    <option value="English">🇬🇧 English</option>
+    <option value="Hindi">🇮🇳 Hindi</option>
+    <option value="Tamil">🇮🇳 Tamil</option>
+    <option value="Telugu">🇮🇳 Telugu</option>
+    <option value="Kannada">🇮🇳 Kannada</option>
+    <option value="Malayalam">🇮🇳 Malayalam</option>
+    <option value="Bengali">🇮🇳 Bengali</option>
+    <option value="Marathi">🇮🇳 Marathi</option>
+    <option value="Gujarati">🇮🇳 Gujarati</option>
+    <option value="Punjabi">🇮🇳 Punjabi</option>
+    <option value="Urdu">🇵🇰 Urdu</option>
+    <option value="Spanish">🇪🇸 Spanish</option>
+    <option value="French">🇫🇷 French</option>
+    <option value="German">🇩🇪 German</option>
+    <option value="Italian">🇮🇹 Italian</option>
+    <option value="Portuguese">🇵🇹 Portuguese</option>
+    <option value="Chinese">🇨🇳 Chinese</option>
+    <option value="Japanese">🇯🇵 Japanese</option>
+    <option value="Korean">🇰🇷 Korean</option>
+    <option value="Arabic">🇸🇦 Arabic</option>
+    <option value="Russian">🇷🇺 Russian</option>
+  </select>
+
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="translateTab"><span class="tab-num">01</span><span>Meaning</span></button>
+    <button class="tab-btn" data-tab="pageTab"><span class="tab-num">02</span><span>Learn</span></button>
+    <button class="tab-btn" data-tab="quizTab"><span class="tab-num">03</span><span>Quiz</span></button>
+  </div>
+
+  <!-- ===================== TRANSLATE / MEANING TAB ===================== -->
+  <div id="translateTab" class="tab-panel active">
+    <div class="section-intro"><div class="eyebrow">SELECTED TEXT</div><div class="section-title">Make it clear</div><div class="section-desc">Highlight text on the webpage, then translate or explain it.</div></div>
+    <button id="simplifyBtn"><span>✦</span> Get Meaning / Translate</button>
+    <div id="status" class="status"></div>
+    <div id="resultToolbar" class="result-toolbar">
+      <button id="expandBtn" type="button" class="expand-btn">⤢ Enlarge</button>
+    </div>
+    <div id="resultBox" class="result-box"></div>
+    <div id="actionButtons" class="action-group">
+      <button id="ttsBtn" class="secondary-btn">🔊 Read Aloud</button>
+      <button id="copyBtn" class="secondary-btn">📋 Copy Text</button>
+    </div>
+  </div>
+
+  <!-- ===================== PAGE MODE TAB ===================== -->
+  <div id="pageTab" class="tab-panel">
+    <div class="section-intro"><div class="eyebrow">PAGE MODE</div><div class="section-title">Learn your way</div><div class="section-desc">Turn the current page into a story, summary, or quick notes.</div></div>
+    <button id="readPageBtn"><span>↳</span> Load This Page's Text</button>
+    <div id="pageStatus" class="status"></div>
+
+    <div id="pageStyleGroup" class="style-group">
+      <div class="style-label">Choose a format:</div>
+      <div class="style-buttons">
+        <button id="storyBtn" class="style-btn" disabled>📖 Story</button>
+        <button id="summaryBtn" class="style-btn" disabled>📝 Summary</button>
+        <button id="notesBtn" class="style-btn" disabled>🗒️ Notes</button>
+      </div>
+    </div>
+
+    <div id="pageResultToolbar" class="result-toolbar">
+      <button id="pageExpandBtn" type="button" class="expand-btn">⤢ Enlarge</button>
+    </div>
+    <div id="pageResultBox" class="result-box"></div>
+    <div id="pageActionButtons" class="action-group">
+      <button id="pageTtsBtn" class="secondary-btn">🔊 Read Aloud</button>
+      <button id="pageCopyBtn" class="secondary-btn">📋 Copy Text</button>
+    </div>
+  </div>
+
+  <!-- ===================== QUIZ TAB ===================== -->
+  <div id="quizTab" class="tab-panel">
+    <div id="quizSetup" class="quiz-setup">
+      <div class="section-intro"><div class="eyebrow">ACTIVE RECALL</div><div class="section-title">Test yourself</div><div class="section-desc">Generate five questions from selected text or the whole page.</div></div>
+      <button id="quizSelectedBtn"><span>▣</span> Quiz: Selected Text</button>
+      <button id="quizPageBtn"><span>▤</span> Quiz: Whole Page</button>
+    </div>
+    <div id="quizStatus" class="status"></div>
+
+    <div id="quizArea" class="quiz-area"></div>
+    <div id="quizResult" class="quiz-result"></div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
